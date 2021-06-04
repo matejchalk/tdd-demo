@@ -1,0 +1,47 @@
+@keyframes bar-expand {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.poll-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.option {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border: 2px solid #a594f9;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+
+  &.option-selectable {
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f5efff;
+    }
+  }
+}
+
+.option-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: #e5d9f2;
+  animation: bar-expand 1s;
+
+  &.option-bar-selected {
+    background-color: #a594f9;
+  }
+}
