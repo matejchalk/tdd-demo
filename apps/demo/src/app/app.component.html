@@ -3,3 +3,7 @@
 <hr />
 
 <app-poll-v2 [poll]="poll$ | async"></app-poll-v2>
+
+<hr />
+
+<app-poll-v3 [poll]="pollVM$ | async" (vote)="handleVote($event)"></app-poll-v3>

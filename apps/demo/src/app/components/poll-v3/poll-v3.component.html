@@ -1,0 +1,23 @@
+<div *ngIf="poll">
+  <div class="poll-title">{{ poll.title }}</div>
+  <div
+    class="option"
+    [class.option-selectable]="poll.userCanVote"
+    *ngFor="let option of poll.options; trackBy: trackByPollOption"
+    (click)="
+      poll.userCanVote &&
+        vote.emit({ pollId: poll.id, pollOptionId: option.id })
+    "
+  >
+    <div class="option-label">{{ option.label }}</div>
+    <div
+      *ngIf="!poll.userCanVote"
+      class="option-bar"
+      [class.option-bar-selected]="option.userHasSelected"
+      [style.width.%]="option.votePercentage"
+    ></div>
+    <div *ngIf="!poll.userCanVote" class="option-percentage">
+      {{ option.votePercentage }}%
+    </div>
+  </div>
+</div>
