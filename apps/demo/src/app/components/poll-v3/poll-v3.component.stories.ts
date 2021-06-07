@@ -25,9 +25,6 @@ export default {
 } as Meta;
 
 export const userNotVoted: Story = () => ({
-  moduleMetadata: {
-    imports: [],
-  },
   props: {
     poll: {
       id: '42',
@@ -69,9 +66,6 @@ export const userVoted: Story = () => {
     '456'
   );
   return {
-    moduleMetadata: {
-      imports: [],
-    },
     props: {
       poll: {
         id: '42',
@@ -116,9 +110,6 @@ export const userVoted: Story = () => {
 };
 
 export const expired: Story = () => ({
-  moduleMetadata: {
-    imports: [],
-  },
   props: {
     poll: {
       id: '42',

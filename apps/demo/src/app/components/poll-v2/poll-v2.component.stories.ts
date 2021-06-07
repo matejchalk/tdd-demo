@@ -20,15 +20,12 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [PollV2Module],
+      providers: [provideMockStore()],
     }),
   ],
 } as Meta;
 
 export const userNotVoted: Story = () => ({
-  moduleMetadata: {
-    imports: [],
-    providers: [provideMockStore()],
-  },
   props: {
     poll: {
       id: '42',
@@ -69,10 +66,6 @@ export const userVoted: Story = () => {
     '456'
   );
   return {
-    moduleMetadata: {
-      imports: [],
-      providers: [provideMockStore()],
-    },
     props: {
       poll: {
         id: '42',
@@ -104,10 +97,6 @@ export const userVoted: Story = () => {
 };
 
 export const expired: Story = () => ({
-  moduleMetadata: {
-    imports: [],
-    providers: [provideMockStore()],
-  },
   props: {
     poll: {
       id: '42',
